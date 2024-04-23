@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Index</title>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Custom CSS -->
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.navbar {
+	height: 56px; /* Adjusted height to half */
+	background-color: #f8f9fa;
+	position: fixed;
+	top: 0%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	z-index: 1000; /* Ensure the navbar is above other elements */
+}
+
+.navbar-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.navbar-brand img {
+	height: 50px; /* Adjust the height as needed */
+}
+
+.navbar-nav {
+	width: 100%; /* Ensure full width of navbar */
+	display: flex;
+	justify-content: center; /* Center the content horizontally */
+}
+
+.navbar-nav .nav-link {
+	padding-top: 10px; /* Adjust the padding as needed */
+	color: #007bff;
+}
+
+.navbar-nav .nav-link:hover {
+	color: lightgreen; /* Change color on hover */
+}
+
+.background-image {
+	background: url('/images/farm1.jpg') center center fixed;
+	background-size: cover;
+	height: 97vh; /* Set the height to 95% of the viewport height */
+}
+
+.medieval-section {
+	padding-top: 100px;
+	background-color: white;
+	color: black;
+}
+
+.medieval-section img {
+	width: 150px;
+	height: 150px;
+	margin-top: 20px;
+}
+
+.footer {
+	background-color: #f8f9fa;
+	padding: 20px 0;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.footer a {
+	margin: 0 10px;
+	text-decoration: none;
+	color: #007bff;
+}
+
+.footer a:hover {
+	color: lightgreen; /* Change color on hover */
+}
+
+.footer img {
+	height: 30px; /* Adjust the height of the bottom logo */
+	margin-right: 10px;
+}
+
+.bottom-logo {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+</style>
+</head>
+
+<body>
+
+
+	<!-- Content Goes Here -->
+	<div class="background-image">
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="navbar-content">
+				<a class="navbar-brand mr-0" href="#"> <!-- You can use an image here for the logo -->
+					<img src="/images/applelogo2.jpg" alt="Logo" height="30">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarNav" aria-controls="navbarNav"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="ml-auto">
+					<span class="navbar-text mr-4">Sidra villa-abrille</strong></span>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> Fincas </a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" th:href="@{/fincas/mostrar}">Fincas</a>
+								<a class="dropdown-item"
+									th:href="@{/variedadtratamientofincas/mostrar}">VariedadTratamientoFincas</a>
+								<a class="dropdown-item" th:href="@{/tratamientofincas/mostrar}">TratamientoFincas</a>
+							</div></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> Arbol </a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" th:href="@{/arboles/mostrar}">Arboles</a>
+								<a class="dropdown-item" th:href="@{/arboltratamientos/mostrar}">ArbolTratamientos</a>
+							</div></li>
+
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/variedades/mostrar}">Variedades</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/tratamientos/mostrar}">Tratamientos</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/fotografias/mostrar}">Fotografias</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/recolecciones/mostrar}">Recolecciones</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/reposiciones/mostrar}">Reposiciones</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="medieval-section">
+			<!-- Add your image below the text -->
+			<img src="/images/vae.png" alt="Medieval Image">
+			<div class="textcontainer">
+				<p>La familia Villa-Abrille, arraigada en la rica tradición
+					agrícola, se embarcó en la apasionante empresa de establecer una
+					plantación de sidra de manzana con el propósito de preservar sus
+					raíces, contribuir al legado familiar y responder a una llamada de
+					la tierra que resonaba en su linaje. Desde tiempos inmemoriales,
+					los Villa-Abrille han cultivado la tierra con dedicación y amor,
+					transmitiendo de generación en generación el arte ancestral de la
+					agricultura. A medida que el tiempo avanzaba, la familia se
+					encontró ante la necesidad de adaptarse a los cambios en la
+					sociedad y en las demandas del mercado. Fue entonces cuando surgió
+					la idea de iniciar una plantación de manzanas específicamente
+					destinada a la producción de sidra. La decisión de centrarse en la
+					sidra no fue simplemente un capricho, sino una cuidadosa reflexión
+					sobre la identidad y la tradición familiar. Los Villa-Abrille
+					siempre han considerado la tierra como un miembro más de la
+					familia, y la conexión con la naturaleza ha sido un pilar
+					fundamental en su filosofía de vida. La sidra, con su proceso
+					artesanal y sus raíces profundamente arraigadas en la cultura, se
+					reveló como la opción perfecta para fusionar la pasión por la
+					tierra con la innovación. Al adentrarse en el mundo de la sidra, la
+					familia Villa-Abrille descubrió un universo de posibilidades. Desde
+					la selección meticulosa de las variedades de manzanas hasta el arte
+					de la fermentación, cada paso en la creación de la sidra se
+					convirtió en una expresión de la dedicación de la familia hacia su
+					oficio. La plantación no era solo un medio de subsistencia, sino
+					una forma de compartir con el mundo la riqueza de su herencia. La
+					decisión de la familia de llevar a cabo esta empresa no solo fue
+					impulsada por la búsqueda de un negocio rentable, sino también por
+					el deseo profundo de preservar las tradiciones que habían sido
+					transmitidas a lo largo de los años. Al hacerlo, la familia
+					Villa-Abrille se convirtió en custodia de un legado agrícola que
+					trasciende el tiempo, manteniendo viva la esencia de generaciones
+					pasadas y construyendo un puente hacia el futuro. La plantación de
+					sidra de manzana no solo se erigió como un proyecto empresarial,
+					sino como un testamento vivo de la dedicación, el amor y el respeto
+					que la familia Villa-Abrille siente por la tierra y sus
+					antepasados. Cada manzano plantado, cada cosecha recogida, es un
+					tributo a la historia que los precede y a la responsabilidad de
+					nutrir la tierra para las generaciones venideras. En resumen, la
+					familia Villa-Abrille decidió iniciar una plantación de sidra de
+					manzana no solo como una inversión comercial, sino como una
+					expresión palpable de su conexión con la tierra y su compromiso
+					inquebrantable con la preservación de las tradiciones familiares. A
+					través de la sidra, han logrado tejer una historia viva que honra
+					el pasado mientras mira hacia el futuro con esperanza y
+					determinación.</p>
+			</div>
+		</div>
+	</div>
+	<!-- Medieval Section -->
+
+
+
+	<!-- Footer -->
+	<div class="footer">
+		<a th:href="@{/info}">Info</a>
+		<!-- Replace the placeholders with your actual media links and icons -->
+		<!-- Bottom Logo -->
+		<div class="bottom-logo">
+			<img src="/images/applelogo2.jpg" alt="Bottom Logo">
+		</div>
+	</div>
+
+	<!-- Bootstrap JS (Optional) -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
