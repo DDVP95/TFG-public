@@ -1,7 +1,7 @@
 # TFG-public
 
 This was my Final Degree Project it`s a small Java Spring Boot project. It administrates a private apple cider plantation.
-You have to create a local instance in MySQLWorkbench with the username: Root pw: temporal. And create a schema inside it called "proyectotfg".
+You have to create a local instance in MySQLWorkbench with the username: root pw: temporal. And create a schema inside it called "proyectotfg".
 
 
 http://localhost:8080/index 
